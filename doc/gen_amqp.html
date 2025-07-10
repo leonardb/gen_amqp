@@ -1,0 +1,3266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.2">
+    <meta name="project" content="gen_amqp v0.1.0">
+
+
+    <title>gen_amqp — gen_amqp v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-erlang-DUKXLSAT.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-A7S2WMC7.js"></script>
+    <script src="dist/sidebar_items-DDCA706F.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JRPQ5PR6.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-behaviour">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+gen_amqp
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of gen_amqp</span>
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+  <span translate="no">gen_amqp</span> <small>behaviour</small>
+  <small class="app-vsn" translate="no">(gen_amqp v0.1.0)</small>
+
+</h1>
+
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:amqp_connection/0" translate="no">amqp_connection/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:amqp_msg/0" translate="no">amqp_msg/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:args/0" translate="no">args/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:basic_cancel/0" translate="no">basic_cancel/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:basic_reject/0" translate="no">basic_reject/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:buffer_module/0" translate="no">buffer_module/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:channel_tag/0" translate="no">channel_tag/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:config/0" translate="no">config/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:confirms_fun/0" translate="no">confirms_fun/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:confirms_handler/0" translate="no">confirms_handler/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:confirms_module_function/0" translate="no">confirms_module_function/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:consumer_tag/0" translate="no">consumer_tag/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:deliver_payload/0" translate="no">deliver_payload/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:exchange/0" translate="no">exchange/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:file/0" translate="no">file/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:message/0" translate="no">message/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:name/0" translate="no">name/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:options/0" translate="no">options/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:parsed_config/0" translate="no">parsed_config/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:queue_name/0" translate="no">queue_name/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:queue_options/0" translate="no">queue_options/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:reply_code/0" translate="no">reply_code/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:reply_text/0" translate="no">reply_text/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:return_tag/0" translate="no">return_tag/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:routing_key/0" translate="no">routing_key/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:sflag/0" translate="no">sflag/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:stimeout/0" translate="no">stimeout/0</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:tag/0" translate="no">tag/0</a>
+
+      </div>
+
+    </div>
+
+</div>
+<div class="summary-callbacks summary">
+  <h2>
+    <a href="#callbacks">Callbacks</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:code_change/3" translate="no">code_change/3</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_basic_cancel/2" translate="no">handle_basic_cancel/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_basic_deliver/2" translate="no">handle_basic_deliver/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_basic_reject/2" translate="no">handle_basic_reject/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_basic_return/2" translate="no">handle_basic_return/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_call/3" translate="no">handle_call/3</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_cast/2" translate="no">handle_cast/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_connect/1" translate="no">handle_connect/1</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_continue/2" translate="no">handle_continue/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_disconnect/2" translate="no">handle_disconnect/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_error/4" translate="no">handle_error/4</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_info/2" translate="no">handle_info/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_queue_deleted/2" translate="no">handle_queue_deleted/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:handle_rpc/2" translate="no">handle_rpc/2</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:init/1" translate="no">init/1</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:terminate/2" translate="no">terminate/2</a>
+
+      </div>
+
+    </div>
+
+</div>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#abcast/2" translate="no">abcast(X, Y)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#abcast/3" translate="no">abcast(X, Y, Z)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#ack/1" translate="no">ack(M)</a>
+
+      </div>
+
+        <div class="summary-synopsis">acknowledge a message</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#bind/2" translate="no">bind(Queue, Exchange)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Bind a queue to an exchange with the default routing key.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#bind/3" translate="no">bind(Queue, Exchange, RoutingKey)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#call/2" translate="no">call(X, Y)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#call/3" translate="no">call(X, Y, Z)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#cast/2" translate="no">cast(X, Y)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#code_change/3" translate="no">code_change(OldVsn, _, Extra)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#connect/1" translate="no">connect(Opts)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#connect/2" translate="no">connect(Opts, Pid)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#connection_pid/1" translate="no">connection_pid(_)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#direct_exchange/1" translate="no">direct_exchange(ExchangeName)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Create a direct exchange</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#disconnect/0" translate="no">disconnect()</a>
+
+      </div>
+
+        <div class="summary-synopsis">Disconnect from the AMQP server.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#enter_loop/3" translate="no">enter_loop(X, Y, Z)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#enter_loop/4" translate="no">enter_loop(X, Y, Z, A)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#enter_loop/5" translate="no">enter_loop(X, Y, Z, A, B)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#fanout_exchange/1" translate="no">fanout_exchange(ExchangeName)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Create a fanout exchange</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#handle_call/3" translate="no">handle_call(Request, From, _)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#handle_cast/2" translate="no">handle_cast(Request, _)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#handle_continue/2" translate="no">handle_continue(Request, _)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#handle_info/2" translate="no">handle_info(InPayload, _)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#init/1" translate="no">init(_)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><h2>Connection behavior options:</h2><ul><li>auto_ack_unhandled: boolean for automatic acknowledgment</li><li>buffer: buffering strategy (none, queue, or custom module)</li><li>confirms: message confirmation handling</li></ul><h2>Connection parameters:</h2><ul><li>heartbeat: heartbeat interval</li><li>host: server hostname or IP</li><li>virtual_host: RabbitMQ virtual host</li><li>username: authentication username</li><li>password: authentication password</li></ul><h2>Network settings:</h2><ul><li>port: server port number</li><li>channel_max: maximum number of channels</li><li>frame_max: maximum frame size</li><li>connection_timeout: connection timeout</li><li>ssl_options: SSL configuration</li><li>auth_mechanisms: authentication mechanisms</li><li>client_properties: client properties</li><li>socket_options: TCP socket options</li></ul></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#multi_call/2" translate="no">multi_call(X, Y)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#multi_call/3" translate="no">multi_call(X, Y, Z)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#multi_call/4" translate="no">multi_call(A, B, C, D)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#nack/1" translate="no">nack(M)</a>
+
+      </div>
+
+        <div class="summary-synopsis">negative acknowledge a message</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#payload/1" translate="no">payload(_)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Extract the payload from the message.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#publish/2" translate="no">publish(Exchange, Payload)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Publish a message to an exchange with the default routing key.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#publish/3" translate="no">publish(Exchange, RoutingKey, Payload)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Publish a message to an exchange with a routing key.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#publish_confirmed/2" translate="no">publish_confirmed(Exchange, Payload)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Publish a message and wait for confirmation.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#publish_confirmed/3" translate="no">publish_confirmed(Exchange, RoutingKey, Payload)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#publish_confirmed_async/4" translate="no">publish_confirmed_async(Exchange, RoutingKey, PayloadId, Payload)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#queue/1" translate="no">queue(QueueName)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Create a queue with the given name.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#queue/2" translate="no">queue(QueueName, Opts)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#queue_length/1" translate="no">queue_length(Queue)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Get the length of a queue. This number can be off by 1 if the connection is consuming from the queue.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#reply/2" translate="no">reply(A, B)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#rpc_request/2" translate="no">rpc_request(Queue, Payload)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Synchronous RPC call to the given queue. These cannot be buffered if the connection is lost.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#rpc_response/3" translate="no">rpc_response(_, _, Payload)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Send a response to an RPC as a synchronous call to the given queue. These cannot be buffered if the connection is lost.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start/4" translate="no">start(Module, Config, Args, Options)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start/5" translate="no">start(ServerName, Module, Config, Args, Options)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_link/4" translate="no">start_link(Module, Config, Args, Options)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#start_link/5" translate="no">start_link(ServerName, Module, Config, Args, Options)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#subscribe/1" translate="no">subscribe(Q)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Subscribe to a queue with the given name. This will create a new consumer tag for the given queue. The consumer tag will be returned in the reply.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#subscribe/2" translate="no">subscribe(Q, Prefetch)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#subscribe/3" translate="no">subscribe(Q, Prefetch, ConnPid)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#tag/1" translate="no">tag(_)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Extract the delivery tag from the message.</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#terminate/2" translate="no">terminate(Reason, _)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#topic_exchange/1" translate="no">topic_exchange(ExchangeName)</a>
+
+      </div>
+
+        <div class="summary-synopsis">Create a topic exchange</div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#unsubscribe/1" translate="no">unsubscribe(Q)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#unsubscribe_all/0" translate="no">unsubscribe_all()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#wait_for_confirms/1" translate="no">wait_for_confirms(_)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#wait_for_confirms/2" translate="no">wait_for_confirms(_, Timeout)</a>
+
+      </div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Types</span>
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:amqp_connection/0">
+
+  <div class="detail-header">
+    <a href="#t:amqp_connection/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">amqp_connection/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> amqp_connection() ::
+    #{mod := <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>(),
+      conn := <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>(),
+      channel := <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(),
+      confirms_handler := undefined | <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>() | {<a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>(), _} | {via, _, _} | fun((_, _) -> <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>()),
+      buffer := none | queue | <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>(),
+      auto_ack_unhandled := <a href="https://www.erlang.org/doc/man/erlang.html#type-boolean">boolean</a>(),
+      name => <a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(),
+      consumer_tags := [<a href="#t:consumer_tag/0">consumer_tag</a>()]}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:amqp_msg/0">
+
+  <div class="detail-header">
+    <a href="#t:amqp_msg/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">amqp_msg/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> amqp_msg() :: #amqp_msg{props :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), payload :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:args/0">
+
+  <div class="detail-header">
+    <a href="#t:args/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">args/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> args() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:basic_cancel/0">
+
+  <div class="detail-header">
+    <a href="#t:basic_cancel/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">basic_cancel/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> basic_cancel() :: #'basic.cancel'{consumer_tag :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), nowait :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:basic_reject/0">
+
+  <div class="detail-header">
+    <a href="#t:basic_reject/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">basic_reject/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> basic_reject() :: #'basic.reject'{delivery_tag :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), requeue :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:buffer_module/0">
+
+  <div class="detail-header">
+    <a href="#t:buffer_module/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">buffer_module/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> buffer_module() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:channel_tag/0">
+
+  <div class="detail-header">
+    <a href="#t:channel_tag/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">channel_tag/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> channel_tag() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:config/0">
+
+  <div class="detail-header">
+    <a href="#t:config/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">config/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> config() ::
+    [{auto_ack_unhandled, <a href="https://www.erlang.org/doc/man/erlang.html#type-boolean">boolean</a>()} |
+     {buffer, none | queue | <a href="#t:buffer_module/0">buffer_module</a>()} |
+     {confirms, <a href="#t:confirms_handler/0">confirms_handler</a>()} |
+     {heartbeat, <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>()} |
+     {host, <a href="https://www.erlang.org/doc/man/inet.html#type-ip_address">inet:ip_address</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-string">string</a>()} |
+     {virtual_host, <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()} |
+     {username, <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()} |
+     {password, <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()} |
+     {port, <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>()} |
+     {channel_max, <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>()} |
+     {frame_max, <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>()} |
+     {connection_timeout, <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>()} |
+     {ssl_options, <a href="https://www.erlang.org/doc/man/erlang.html#type-list">list</a>()} |
+     {auth_mechanisms, <a href="https://www.erlang.org/doc/man/erlang.html#type-list">list</a>()} |
+     {client_properties, <a href="https://www.erlang.org/doc/man/erlang.html#type-list">list</a>()} |
+     {socket_options, <a href="https://www.erlang.org/doc/man/erlang.html#type-list">list</a>()}].</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:confirms_fun/0">
+
+  <div class="detail-header">
+    <a href="#t:confirms_fun/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">confirms_fun/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> confirms_fun() :: fun((ack | nack, _) -> <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>()).</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:confirms_handler/0">
+
+  <div class="detail-header">
+    <a href="#t:confirms_handler/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">confirms_handler/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> confirms_handler() :: false | null | true | <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>() | <a href="#t:confirms_fun/0">confirms_fun</a>() | <a href="#t:confirms_module_function/0">confirms_module_function</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:confirms_module_function/0">
+
+  <div class="detail-header">
+    <a href="#t:confirms_module_function/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">confirms_module_function/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> confirms_module_function() :: {<a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:consumer_tag/0">
+
+  <div class="detail-header">
+    <a href="#t:consumer_tag/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">consumer_tag/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> consumer_tag() :: {<a href="#t:queue_name/0">queue_name</a>(), <a href="#t:tag/0">tag</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:deliver_payload/0">
+
+  <div class="detail-header">
+    <a href="#t:deliver_payload/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">deliver_payload/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> deliver_payload() ::
+    {#'basic.deliver'{consumer_tag :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                      delivery_tag :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                      redelivered :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                      exchange :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                      routing_key :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()},
+     <a href="#t:amqp_msg/0">amqp_msg</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:exchange/0">
+
+  <div class="detail-header">
+    <a href="#t:exchange/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">exchange/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> exchange() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:file/0">
+
+  <div class="detail-header">
+    <a href="#t:file/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">file/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> file() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-list">list</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:message/0">
+
+  <div class="detail-header">
+    <a href="#t:message/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">message/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> message() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:name/0">
+
+  <div class="detail-header">
+    <a href="#t:name/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">name/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> name() :: {local, <a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>()} | {global, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} | {via, <a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:options/0">
+
+  <div class="detail-header">
+    <a href="#t:options/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">options/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> options() :: [{timeout, <a href="#t:stimeout/0">stimeout</a>()} | {debug, [<a href="#t:sflag/0">sflag</a>()]}].</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:parsed_config/0">
+
+  <div class="detail-header">
+    <a href="#t:parsed_config/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">parsed_config/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> parsed_config() ::
+    #{auto_ack_unhandled := <a href="https://www.erlang.org/doc/man/erlang.html#type-boolean">boolean</a>(),
+      buffer := none | queue | <a href="#t:buffer_module/0">buffer_module</a>(),
+      confirms := <a href="#t:confirms_handler/0">confirms_handler</a>(),
+      network :=
+          #amqp_params_network{username :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               password :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               virtual_host :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               host :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               port :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               channel_max :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               frame_max :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               heartbeat :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               connection_timeout :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               ssl_options :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               auth_mechanisms :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               client_properties :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(),
+                               socket_options :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()},
+      mod := <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:queue_name/0">
+
+  <div class="detail-header">
+    <a href="#t:queue_name/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">queue_name/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> queue_name() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:queue_options/0">
+
+  <div class="detail-header">
+    <a href="#t:queue_options/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">queue_options/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> queue_options() ::
+    [{expires, <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>()} |
+     {mode, <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-list">list</a>()} |
+     {durable, <a href="https://www.erlang.org/doc/man/erlang.html#type-boolean">boolean</a>()} |
+     {auto_delete, <a href="https://www.erlang.org/doc/man/erlang.html#type-boolean">boolean</a>()} |
+     {exclusive, <a href="https://www.erlang.org/doc/man/erlang.html#type-boolean">boolean</a>()}].</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:reply_code/0">
+
+  <div class="detail-header">
+    <a href="#t:reply_code/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">reply_code/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> reply_code() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:reply_text/0">
+
+  <div class="detail-header">
+    <a href="#t:reply_text/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">reply_text/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> reply_text() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:return_tag/0">
+
+  <div class="detail-header">
+    <a href="#t:return_tag/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">return_tag/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> return_tag() :: {<a href="#t:reply_code/0">reply_code</a>(), <a href="#t:reply_text/0">reply_text</a>(), <a href="#t:exchange/0">exchange</a>(), <a href="#t:routing_key/0">routing_key</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:routing_key/0">
+
+  <div class="detail-header">
+    <a href="#t:routing_key/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">routing_key/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> routing_key() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:sflag/0">
+
+  <div class="detail-header">
+    <a href="#t:sflag/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">sflag/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> sflag() :: trace | log | {logfile, <a href="#t:file/0">file</a>()} | statistics | debug.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:stimeout/0">
+
+  <div class="detail-header">
+    <a href="#t:stimeout/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">stimeout/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> stimeout() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-pos_integer">pos_integer</a>() | infinity | hibernate.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:tag/0">
+
+  <div class="detail-header">
+    <a href="#t:tag/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">tag/0</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> tag() :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>() | {<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="callbacks" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#callbacks">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Callbacks</span>
+    </h1>
+    <div class="callbacks-list">
+<section class="detail" id="c:code_change/3">
+
+  <div class="detail-header">
+    <a href="#c:code_change/3" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">code_change/3</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> code_change(OldVsn :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>() | {down, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}, State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Extra :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+               {ok, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} | {error, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_basic_cancel/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_basic_cancel/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_basic_cancel/2</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_basic_cancel(ChannelTag :: <a href="#t:channel_tag/0">channel_tag</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                       {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                       {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                       {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                       {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_basic_deliver/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_basic_deliver/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_basic_deliver/2</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_basic_deliver({Tag :: <a href="#t:tag/0">tag</a>(), Message :: <a href="#t:message/0">message</a>()}, State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                        {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                        {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                        {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                        {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_basic_reject/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_basic_reject/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_basic_reject/2</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_basic_reject(RejectTag :: <a href="#t:tag/0">tag</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                       {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                       {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                       {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                       {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_basic_return/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_basic_return/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_basic_return/2</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_basic_return(ReturnTag :: <a href="#t:return_tag/0">return_tag</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                       {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                       {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                       {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                       {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_call/3">
+
+  <div class="detail-header">
+    <a href="#c:handle_call/3" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_call/3</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_call(Request :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), From :: {<a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>(), Tag :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}, State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+               {reply, Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+               {reply, Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+               {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+               {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+               {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+               {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_cast/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_cast/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_cast/2</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_cast(Request :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+               {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+               {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+               {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_connect/1">
+
+  <div class="detail-header">
+    <a href="#c:handle_connect/1" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_connect/1</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_connect(State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                  {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                  {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                  {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                  {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_continue/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_continue/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_continue/2</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_continue(Info :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                   {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                   {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate | {continue, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}} |
+                   {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_disconnect/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_disconnect/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_disconnect/2</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_disconnect(Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                     {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                     {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                     {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                     {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_error/4">
+
+  <div class="detail-header">
+    <a href="#c:handle_error/4" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_error/4</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_error(From :: basic_deliver | rpc,
+             Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>(),
+             {Tag :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), Msg :: <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>()},
+             State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_info/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_info/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_info/2</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_info(Info :: <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+               {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+               {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+               {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_queue_deleted/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_queue_deleted/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_queue_deleted/2</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_queue_deleted(Queue :: <a href="#t:queue_name/0">queue_name</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                        {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                        {noreply, NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+                        {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+                        {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:handle_rpc/2">
+
+  <div class="detail-header">
+    <a href="#c:handle_rpc/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">handle_rpc/2</h1>
+
+
+      <span class="note">(optional)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> handle_rpc(Message :: {invalid_term, <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()} | {<a href="#t:message/0">message</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}, State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+              {reply, Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+              {reply, Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate} |
+              {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), Reply :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+              {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), NewState :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:init/1">
+
+  <div class="detail-header">
+    <a href="#c:init/1" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">init/1</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> init(Args :: <a href="#t:config/0">config</a>()) ->
+        {ok, State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+        {ok, State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-timeout">timeout</a>() | hibernate | {continue, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}} |
+        {stop, Reason :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} |
+        ignore.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:terminate/2">
+
+  <div class="detail-header">
+    <a href="#c:terminate/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">terminate/2</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-callback</span> terminate(Reason :: normal | shutdown | {shutdown, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()} | <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>(), State :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) -> <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>().</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="abcast/2">
+
+  <div class="detail-header">
+    <a href="#abcast/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">abcast(X, Y)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="abcast/3">
+
+  <div class="detail-header">
+    <a href="#abcast/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">abcast(X, Y, Z)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="ack/1">
+
+  <div class="detail-header">
+    <a href="#ack/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">ack(M)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> ack(<a href="#t:deliver_payload/0">deliver_payload</a>() | <a href="#t:basic_cancel/0">basic_cancel</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+acknowledge a message
+  </section>
+</section>
+<section class="detail" id="bind/2">
+
+  <div class="detail-header">
+    <a href="#bind/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">bind(Queue, Exchange)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> bind(Queue :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), Exchange :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+Bind a queue to an exchange with the default routing key.
+  </section>
+</section>
+<section class="detail" id="bind/3">
+
+  <div class="detail-header">
+    <a href="#bind/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">bind(Queue, Exchange, RoutingKey)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> bind(Queue :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), Exchange :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), RoutingKey :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="call/2">
+
+  <div class="detail-header">
+    <a href="#call/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">call(X, Y)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="call/3">
+
+  <div class="detail-header">
+    <a href="#call/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">call(X, Y, Z)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="cast/2">
+
+  <div class="detail-header">
+    <a href="#cast/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">cast(X, Y)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="code_change/3">
+
+  <div class="detail-header">
+    <a href="#code_change/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">code_change(OldVsn, _, Extra)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="connect/1">
+
+  <div class="detail-header">
+    <a href="#connect/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">connect(Opts)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> connect(<a href="#t:parsed_config/0">parsed_config</a>()) -> {ok, <a href="#t:amqp_connection/0">amqp_connection</a>()} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="connect/2">
+
+  <div class="detail-header">
+    <a href="#connect/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">connect(Opts, Pid)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> connect(<a href="#t:parsed_config/0">parsed_config</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-atom">atom</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()) -> {ok, <a href="#t:amqp_connection/0">amqp_connection</a>()} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="connection_pid/1">
+
+  <div class="detail-header">
+    <a href="#connection_pid/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">connection_pid(_)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="direct_exchange/1">
+
+  <div class="detail-header">
+    <a href="#direct_exchange/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">direct_exchange(ExchangeName)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> direct_exchange(ExchangeName :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+Create a direct exchange
+  </section>
+</section>
+<section class="detail" id="disconnect/0">
+
+  <div class="detail-header">
+    <a href="#disconnect/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">disconnect()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+Disconnect from the AMQP server.
+  </section>
+</section>
+<section class="detail" id="enter_loop/3">
+
+  <div class="detail-header">
+    <a href="#enter_loop/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">enter_loop(X, Y, Z)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="enter_loop/4">
+
+  <div class="detail-header">
+    <a href="#enter_loop/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">enter_loop(X, Y, Z, A)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="enter_loop/5">
+
+  <div class="detail-header">
+    <a href="#enter_loop/5" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">enter_loop(X, Y, Z, A, B)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="fanout_exchange/1">
+
+  <div class="detail-header">
+    <a href="#fanout_exchange/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">fanout_exchange(ExchangeName)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> fanout_exchange(ExchangeName :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+Create a fanout exchange
+  </section>
+</section>
+<section class="detail" id="handle_call/3">
+
+  <div class="detail-header">
+    <a href="#handle_call/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">handle_call(Request, From, _)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="handle_cast/2">
+
+  <div class="detail-header">
+    <a href="#handle_cast/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">handle_cast(Request, _)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="handle_continue/2">
+
+  <div class="detail-header">
+    <a href="#handle_continue/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">handle_continue(Request, _)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="handle_info/2">
+
+  <div class="detail-header">
+    <a href="#handle_info/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">handle_info(InPayload, _)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="init/1">
+
+  <div class="detail-header">
+    <a href="#init/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">init(_)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<h2 id="init/1-connection-behavior-options" class="section-heading">
+  <a href="#init/1-connection-behavior-options" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Connection behavior options:</span>
+</h2>
+<ul><li>auto_ack_unhandled: boolean for automatic acknowledgment</li><li>buffer: buffering strategy (none, queue, or custom module)</li><li>confirms: message confirmation handling</li></ul><h2 id="init/1-connection-parameters" class="section-heading">
+  <a href="#init/1-connection-parameters" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Connection parameters:</span>
+</h2>
+<ul><li>heartbeat: heartbeat interval</li><li>host: server hostname or IP</li><li>virtual_host: RabbitMQ virtual host</li><li>username: authentication username</li><li>password: authentication password</li></ul><h2 id="init/1-network-settings" class="section-heading">
+  <a href="#init/1-network-settings" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Network settings:</span>
+</h2>
+<ul><li>port: server port number</li><li>channel_max: maximum number of channels</li><li>frame_max: maximum frame size</li><li>connection_timeout: connection timeout</li><li>ssl_options: SSL configuration</li><li>auth_mechanisms: authentication mechanisms</li><li>client_properties: client properties</li><li>socket_options: TCP socket options</li></ul>
+  </section>
+</section>
+<section class="detail" id="multi_call/2">
+
+  <div class="detail-header">
+    <a href="#multi_call/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">multi_call(X, Y)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="multi_call/3">
+
+  <div class="detail-header">
+    <a href="#multi_call/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">multi_call(X, Y, Z)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="multi_call/4">
+
+  <div class="detail-header">
+    <a href="#multi_call/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">multi_call(A, B, C, D)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="nack/1">
+
+  <div class="detail-header">
+    <a href="#nack/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">nack(M)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> nack(<a href="#t:deliver_payload/0">deliver_payload</a>() | <a href="#t:basic_cancel/0">basic_cancel</a>() | <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+negative acknowledge a message
+  </section>
+</section>
+<section class="detail" id="payload/1">
+
+  <div class="detail-header">
+    <a href="#payload/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">payload(_)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> payload(<a href="#t:deliver_payload/0">deliver_payload</a>()) -> <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>().</pre>
+
+      </div>
+
+Extract the payload from the message.
+  </section>
+</section>
+<section class="detail" id="publish/2">
+
+  <div class="detail-header">
+    <a href="#publish/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">publish(Exchange, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> publish(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) -> ok | {ok, buffered} | {error, disconnected | buffer_failed}.</pre>
+
+      </div>
+
+Publish a message to an exchange with the default routing key.
+  </section>
+</section>
+<section class="detail" id="publish/3">
+
+  <div class="detail-header">
+    <a href="#publish/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">publish(Exchange, RoutingKey, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> publish(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) -> ok | {ok, buffered} | {error, disconnected | buffer_failed}.</pre>
+
+      </div>
+
+Publish a message to an exchange with a routing key.
+  </section>
+</section>
+<section class="detail" id="publish_confirmed/2">
+
+  <div class="detail-header">
+    <a href="#publish_confirmed/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">publish_confirmed(Exchange, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> publish_confirmed(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) -> ok | {ok, buffered} | {error, disconnected | buffer_failed}.</pre>
+
+      </div>
+
+Publish a message and wait for confirmation.
+  </section>
+</section>
+<section class="detail" id="publish_confirmed/3">
+
+  <div class="detail-header">
+    <a href="#publish_confirmed/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">publish_confirmed(Exchange, RoutingKey, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> publish_confirmed(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                     ok | {ok, buffered} | {error, disconnected | buffer_failed}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="publish_confirmed_async/4">
+
+  <div class="detail-header">
+    <a href="#publish_confirmed_async/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">publish_confirmed_async(Exchange, RoutingKey, PayloadId, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> publish_confirmed_async(Exchange :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(),
+                        RoutingKey :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(),
+                        PayloadId :: <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>(),
+                        Payload :: <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()) ->
+                           ok | {error, disconnected} | {error, no_confirms_handler}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="queue/1">
+
+  <div class="detail-header">
+    <a href="#queue/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">queue(QueueName)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> queue(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> {ok, <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+Create a queue with the given name.
+  </section>
+</section>
+<section class="detail" id="queue/2">
+
+  <div class="detail-header">
+    <a href="#queue/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">queue(QueueName, Opts)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="queue_length/1">
+
+  <div class="detail-header">
+    <a href="#queue_length/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">queue_length(Queue)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+Get the length of a queue. This number can be off by 1 if the connection is consuming from the queue.
+  </section>
+</section>
+<section class="detail" id="reply/2">
+
+  <div class="detail-header">
+    <a href="#reply/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">reply(A, B)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="rpc_request/2">
+
+  <div class="detail-header">
+    <a href="#rpc_request/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">rpc_request(Queue, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> rpc_request(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>()) -> ok | {ok, <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>()} | {error, disconnected}.</pre>
+
+      </div>
+
+Synchronous RPC call to the given queue. These cannot be buffered if the connection is lost.
+  </section>
+</section>
+<section class="detail" id="rpc_response/3">
+
+  <div class="detail-header">
+    <a href="#rpc_response/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">rpc_response(_, _, Payload)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> rpc_response(<a href="#t:amqp_connection/0">amqp_connection</a>(), <a href="#t:deliver_payload/0">deliver_payload</a>(), <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>()) -> ok | {error, disconnected}.</pre>
+
+      </div>
+
+Send a response to an RPC as a synchronous call to the given queue. These cannot be buffered if the connection is lost.
+  </section>
+</section>
+<section class="detail" id="start/4">
+
+  <div class="detail-header">
+    <a href="#start/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start(Module, Config, Args, Options)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> start(Module :: <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>(), Config :: <a href="#t:config/0">config</a>(), Args :: <a href="#t:args/0">args</a>(), Options :: <a href="#t:options/0">options</a>()) ->
+         {ok, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()} | {error, {already_started, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()}} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="start/5">
+
+  <div class="detail-header">
+    <a href="#start/5" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start(ServerName, Module, Config, Args, Options)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> start(ServerName :: <a href="#t:name/0">name</a>(),
+      Module :: <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>(),
+      Config :: <a href="#t:config/0">config</a>(),
+      Args :: <a href="#t:args/0">args</a>(),
+      Options :: <a href="#t:options/0">options</a>()) ->
+         {ok, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()} | {error, {already_started, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()}} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="start_link/4">
+
+  <div class="detail-header">
+    <a href="#start_link/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start_link(Module, Config, Args, Options)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> start_link(Module :: <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>(), Config :: <a href="#t:config/0">config</a>(), Args :: <a href="#t:args/0">args</a>(), Options :: <a href="#t:options/0">options</a>()) ->
+              {ok, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()} | {error, {already_started, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()}} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="start_link/5">
+
+  <div class="detail-header">
+    <a href="#start_link/5" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start_link(ServerName, Module, Config, Args, Options)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> start_link(ServerName :: <a href="#t:name/0">name</a>(),
+           Module :: <a href="https://www.erlang.org/doc/man/erlang.html#type-module">module</a>(),
+           Config :: <a href="#t:config/0">config</a>(),
+           Args :: <a href="#t:args/0">args</a>(),
+           Options :: <a href="#t:options/0">options</a>()) ->
+              {ok, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()} | {error, {already_started, <a href="https://www.erlang.org/doc/man/erlang.html#type-pid">pid</a>()}} | {error, <a href="https://www.erlang.org/doc/man/erlang.html#type-term">term</a>()}.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="subscribe/1">
+
+  <div class="detail-header">
+    <a href="#subscribe/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">subscribe(Q)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+Subscribe to a queue with the given name. This will create a new consumer tag for the given queue. The consumer tag will be returned in the reply.
+  </section>
+</section>
+<section class="detail" id="subscribe/2">
+
+  <div class="detail-header">
+    <a href="#subscribe/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">subscribe(Q, Prefetch)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="subscribe/3">
+
+  <div class="detail-header">
+    <a href="#subscribe/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">subscribe(Q, Prefetch, ConnPid)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="tag/1">
+
+  <div class="detail-header">
+    <a href="#tag/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">tag(_)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> tag(<a href="#t:deliver_payload/0">deliver_payload</a>() | <a href="#t:basic_cancel/0">basic_cancel</a>() | <a href="#t:basic_reject/0">basic_reject</a>()) -> <a href="https://www.erlang.org/doc/man/erlang.html#type-any">any</a>().</pre>
+
+      </div>
+
+Extract the delivery tag from the message.
+  </section>
+</section>
+<section class="detail" id="terminate/2">
+
+  <div class="detail-header">
+    <a href="#terminate/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">terminate(Reason, _)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="topic_exchange/1">
+
+  <div class="detail-header">
+    <a href="#topic_exchange/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">topic_exchange(ExchangeName)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> topic_exchange(ExchangeName :: <a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+Create a topic exchange
+  </section>
+</section>
+<section class="detail" id="unsubscribe/1">
+
+  <div class="detail-header">
+    <a href="#unsubscribe/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">unsubscribe(Q)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> unsubscribe(<a href="https://www.erlang.org/doc/man/erlang.html#type-binary">binary</a>()) -> ok.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="unsubscribe_all/0">
+
+  <div class="detail-header">
+    <a href="#unsubscribe_all/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">unsubscribe_all()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-spec</span> unsubscribe_all() -> ok.</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="wait_for_confirms/1">
+
+  <div class="detail-header">
+    <a href="#wait_for_confirms/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">wait_for_confirms(_)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="wait_for_confirms/2">
+
+  <div class="detail-header">
+    <a href="#wait_for_confirms/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">wait_for_confirms(_, Timeout)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/gen_amqp/0.1.0" class="footer-hex-package">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/gen_amqp/0.1.0">Hex Preview</a>
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="gen_amqp.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.2) for the
+
+            <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
+
+        </p>
+
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>

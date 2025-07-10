@@ -1,0 +1,12 @@
+{application, gen_amqp, [
+    {description, "A behavior for use with rabbitmq"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib
+    ]},
+    {env, []},
+    {modules, []},
+    {links, []}
+ ]}.

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.31.2">
+    <meta name="project" content="gen_amqp v0.1.0">
+
+
+    <title>Overview — gen_amqp v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-erlang-DUKXLSAT.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-A7S2WMC7.js"></script>
+    <script src="dist/sidebar_items-DDCA706F.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-JRPQ5PR6.js"></script>
+
+
+  </head>
+  <body data-type="extras" class="page-extra">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<div class="background-layer"></div>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+      <div>
+        <a href="readme.html" class="sidebar-projectName" translate="no">
+gen_amqp
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+      <div class="top-search">
+        <div class="search-settings">
+          <form class="search-bar" action="search.html">
+            <label class="search-label">
+              <span class="sr-only">Search documentation of gen_amqp</span>
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            </label>
+            <button type="submit" class="search-button" aria-label="Submit Search">
+              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+            </button>
+            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+              <i class="ri-close-line ri-lg" title="Cancel search"></i>
+            </button>
+          </form>
+          <div class="autocomplete">
+          </div>
+          <button class="icon-settings display-settings">
+            <i class="ri-settings-3-line"></i>
+            <span class="sr-only">Settings</span>
+          </button>
+        </div>
+
+      </div>
+
+<h1>
+
+
+  <span>gen_amqp</span>
+</h1>
+
+<p><code class="inline">gen_amqp</code> is an Erlang library that provides a generic behavior for interacting with RabbitMQ. It abstracts the details of connection management, channel handling, queue declaration, message publishing, and consumption, offering a simple and consistent interface for Erlang applications.</p><p>Why use <code class="inline">gen_amqp</code>?</p><ul><li><strong>Simplicity:</strong> Provides a high-level API for common AMQP operations, reducing boilerplate code.</li><li><strong>Reliability:</strong> Manages connections and channels, handling reconnections and error scenarios gracefully.</li><li><strong>Integration:</strong> Designed to fit naturally into Erlang/OTP applications, leveraging OTP principles and patterns.</li><li><strong>Testability:</strong> Facilitates testing by providing clear abstractions and interfaces.</li></ul><h2 id="queueing-and-message-buffering" class="section-heading">
+  <a href="#queueing-and-message-buffering" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Queueing and Message Buffering</span>
+</h2>
+<p>When the connection to the AMQP broker is down, <code class="inline">gen_amqp</code> can buffer outgoing messages according to the configured buffering strategy. This allows your application to continue sending messages even during temporary outages, with delivery deferred until the connection is restored.</p><h3 id="buffering-types" class="section-heading">
+  <a href="#buffering-types" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Buffering Types</span>
+</h3>
+<ul><li><p><strong>none</strong><br/>No buffering is performed. Attempts to publish while disconnected will immediately return an error.<br/><em>Pros</em>: Simple, no memory or resource overhead.<br/><em>Cons</em>: Messages are lost if the connection is unavailable.</p></li><li><p><strong>queue</strong><br/>Messages are buffered in an in-memory FIFO queue while the connection is down. When the connection is restored, buffered messages are sent in order.<br/><em>Pros</em>: No message loss during short outages, fast recovery.<br/><em>Cons</em>: Memory usage grows with the number of buffered messages; messages are lost if the process crashes before reconnection.</p></li><li><p><strong>Mod</strong><br/>A custom buffering strategy, where <code class="inline">Mod</code> is a module that implements your own buffering logic (for example, using ETS, disk, or a distributed store).<br/>The module must export the following functions:</p><ul><li><p><code class="inline">buff_put(Module :: module(), Msg :: any())</code><br/>Add a message to the buffer.</p></li><li><p><code class="inline">buff_lock(Module :: module(), Count :: pos_integer())</code><br/>Lock and retrieve up to <code class="inline">Count</code> messages for delivery. Returns <code class="inline">{ok, list(any())}</code>.</p></li><li><p><code class="inline">buff_unlock(Id :: any())</code><br/>Unlocks the buffer after delivery attempt.</p></li><li><p><code class="inline">buff_delete(Id :: any())</code>
+Remove all locked messages from the buffer after successful delivery.</p></li></ul><p>You can refer to the sample implementation in <a href="test/buffer.erl"><code class="inline">test/buffer.erl</code></a>, which uses ETS for in-memory buffering.</p><p>You own implementation does not have to use integer based keys like the example.</p><p><em>Pros</em>: Full control over buffering, can implement persistence, custom ordering, or distributed buffering.<br/><em>Cons</em>: Requires additional implementation and testing; performance and reliability depend on your code.</p></li></ul><h3 id="behavior-on-reconnection" class="section-heading">
+  <a href="#behavior-on-reconnection" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Behavior on Reconnection</span>
+</h3>
+<p>Once the connection is restored, <code class="inline">gen_amqp</code> automatically flushes the buffer (if enabled), delivering all queued messages in order. If buffering is set to <code class="inline">none</code>, only new messages sent after reconnection will be delivered.</p><p>Choose the buffering strategy that best fits your application's reliability, durability, and performance needs.</p>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="api-reference.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+API Reference
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+      <footer class="footer">
+        <p>
+
+            <span class="line">
+              <a href="https://hex.pm/packages/gen_amqp/0.1.0" class="footer-hex-package">Hex Package</a>
+
+              <a href="https://preview.hex.pm/preview/gen_amqp/0.1.0">Hex Preview</a>
+
+                (<a href="https://preview.hex.pm/preview/gen_amqp/0.1.0/show/README.md">current file</a>)
+
+            </span>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="gen_amqp.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.2) for the
+
+            <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
+
+        </p>
+
+      </footer>
+    </div>
+  </div>
+</main>
+</div>
+
+
+  </body>
+</html>
