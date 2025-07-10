@@ -1,3 +1,10 @@
+%%% @copyright 2025 Leonard Boyce <leonard_at_usethesource.net>
+%%% @author Leonard Boyce <leonard_at_usethesource.net>
+%%% @license MIT
+%%% @doc
+%%% This module provides a generic AMQP client interface using the `gen_server` behavior.
+%%% It allows for connection management, message publishing, consuming, and handling various AMQP events.
+%%% @end
 -module(gen_amqp).
 
 -behaviour(gen_server).

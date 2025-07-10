@@ -8,5 +8,6 @@
     ]},
     {env, []},
     {modules, []},
-    {links, []}
+    {links, []},
+    {license, ["MIT"]}
  ]}.
