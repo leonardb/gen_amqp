@@ -124,6 +124,9 @@ handle_cast(_Request, State) ->
     ?LOG_INFO("~p received unknown cast: ~p", [?MODULE, _Request]),
     {noreply, State}.
 
+handle_info(stop, State) ->
+    ?LOG_INFO("Stopping sender"),
+    {stop, normal, ok, State};
 handle_info(Info, State) ->
     ?LOG_INFO("~p received unknown info: ~p", [?MODULE, Info]),
     {noreply, State}.

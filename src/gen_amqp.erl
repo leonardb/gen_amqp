@@ -919,14 +919,14 @@ connect(
     ConnPid
 ) ->
     case amqp_connection:start(Params, atom_to_binary(Name)) of
-        {ok, ConnPid} ->
+        {ok, AmqpConnPid} ->
             ?LOG_DEBUG("Connected with: ~p", [Params]),
-            {ok, ChannelPid} = amqp_connection:open_channel(ConnPid),
+            {ok, ChannelPid} = amqp_connection:open_channel(AmqpConnPid),
             ok = amqp_selective_consumer:register_default_consumer(ChannelPid, ConnPid),
-            HB = amqp_connection:info(ConnPid, [heartbeat]),
+            HB = amqp_connection:info(AmqpConnPid, [heartbeat]),
             ?LOG_INFO("Conn HB: ~p", [HB]),
             Conn = #{
-                conn => ConnPid,
+                conn => AmqpConnPid,
                 channel => ChannelPid,
                 confirms_handler => undefined,
                 buffer => Buffer,
@@ -956,7 +956,7 @@ connect(
                         ChannelPid, #'confirm.select'{}
                     ),
                     {ok, ConfirmsHandlerPid} = amqp_confirms_handler:register(
-                        ConnPid, ChannelPid, {Mod, Fun}
+                        AmqpConnPid, ChannelPid, {Mod, Fun}
                     ),
                     {ok, Conn#{confirms_handler => ConfirmsHandlerPid}};
                 Fun when is_function(Fun, 2) ->
@@ -965,7 +965,7 @@ connect(
                         ChannelPid, #'confirm.select'{}
                     ),
                     {ok, ConfirmsHandlerPid} = amqp_confirms_handler:register(
-                        ConnPid, ChannelPid, Fun
+                        AmqpConnPid, ChannelPid, Fun
                     ),
                     {ok, Conn#{confirms_handler => ConfirmsHandlerPid}}
             end;

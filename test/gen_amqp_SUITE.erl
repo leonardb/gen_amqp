@@ -28,9 +28,9 @@ end_per_testcase(_Case, Config) ->
     BufferPid = proplists:get_value(buffer, Config),
     ReceiverPid = proplists:get_value(receiver, Config),
     SenderPid = proplists:get_value(sender, Config),
-    exit(ReceiverPid, shutdown),
-    exit(SenderPid, shutdown),
-    exit(BufferPid, shutdown),
+    ReceiverPid ! stop,
+    SenderPid ! stop,
+    BufferPid ! stop,
     ok.
 
 basic_send_receive(_Config) ->

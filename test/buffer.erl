@@ -147,6 +147,9 @@ handle_info(timeout, State) ->
             [ets:insert(?SERVER, Row#cache{locked = undefined}) || Row <- Rows],
             {noreply, State, 500}
     end;
+handle_info(stop, State) ->
+    ?LOG_INFO("Stopping buffer"),
+    {stop, normal, ok, State};
 handle_info(_Info, State) ->
     {noreply, State}.
 
