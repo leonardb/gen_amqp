@@ -21,12 +21,12 @@
 -type amqp_connection() :: #{
     mod := module(),
     conn := pid(),
-    channel := binary(),
+    channel := pid(),
     confirms_handler := undefined | pid() | {atom(), _} | {'via', _, _} | fun((_, _) -> any()),
     buffer := none | queue | module(),
     auto_ack_unhandled := boolean(),
     name => atom() | binary(),
-    consumer_tags := [consumer_tag()]
+    consumer_tags => [] | [consumer_tag()]
 }.
 -type reply_code() :: pos_integer().
 -type reply_text() :: binary().
@@ -311,7 +311,8 @@
     subscribe/1, subscribe/2, subscribe/3,
     unsubscribe/1,
     unsubscribe_all/0,
-    topic_exchange/1
+    topic_exchange/1,
+    purge/1
 ]).
 
 -export([
@@ -819,6 +820,20 @@ process_buffered_messages_(
 %%% API
 %%%===================================================================
 
+%% @doc Purge a queue, removing all messages.
+-spec purge(Queue :: binary()) -> ok.
+purge(Queue) ->
+    Conn = get(?CONN_KEY),
+    purge_(Conn, Queue).
+
+-spec purge_(
+    Conn :: amqp_connection(),
+    Queue :: binary()
+) -> ok.
+purge_(#{channel := Channel}, Queue) ->
+    #'queue.purge_ok'{} = amqp_channel:call(Channel, #'queue.purge'{queue = Queue}),
+    ok.
+
 %% @doc acknowledge a message
 -spec ack(deliver_payload() | basic_cancel() | binary()) -> ok.
 ack(M) ->
@@ -904,15 +919,15 @@ connect(
     ConnPid
 ) ->
     case amqp_connection:start(Params, atom_to_binary(Name)) of
-        {ok, Connection} ->
+        {ok, ConnPid} ->
             ?LOG_DEBUG("Connected with: ~p", [Params]),
-            {ok, Channel} = amqp_connection:open_channel(Connection),
-            ok = amqp_selective_consumer:register_default_consumer(Channel, ConnPid),
-            HB = amqp_connection:info(Connection, [heartbeat]),
+            {ok, ChannelPid} = amqp_connection:open_channel(ConnPid),
+            ok = amqp_selective_consumer:register_default_consumer(ChannelPid, ConnPid),
+            HB = amqp_connection:info(ConnPid, [heartbeat]),
             ?LOG_INFO("Conn HB: ~p", [HB]),
             Conn = #{
-                conn => Connection,
-                channel => Channel,
+                conn => ConnPid,
+                channel => ChannelPid,
                 confirms_handler => undefined,
                 buffer => Buffer,
                 auto_ack_unhandled => AutoAckUnhandled,
@@ -927,24 +942,32 @@ connect(
                     {ok, Conn};
                 true ->
                     #'confirm.select_ok'{} = amqp_channel:call(
-                        Channel, #'confirm.select'{}
+                        ChannelPid, #'confirm.select'{}
                     ),
                     {ok, Conn};
                 Pid when is_pid(Pid) ->
                     #'confirm.select_ok'{} = amqp_channel:call(
-                        Channel, #'confirm.select'{}
+                        ChannelPid, #'confirm.select'{}
                     ),
-                    amqp_channel:register_confirm_handler(Channel, Pid),
+                    amqp_channel:register_confirm_handler(ChannelPid, Pid),
                     {ok, Conn};
+                {Mod, Fun} when is_atom(Mod) andalso is_atom(Fun) ->
+                    #'confirm.select_ok'{} = amqp_channel:call(
+                        ChannelPid, #'confirm.select'{}
+                    ),
+                    {ok, ConfirmsHandlerPid} = amqp_confirms_handler:register(
+                        ConnPid, ChannelPid, {Mod, Fun}
+                    ),
+                    {ok, Conn#{confirms_handler => ConfirmsHandlerPid}};
                 Fun when is_function(Fun, 2) ->
                     %% fun(ack | nack, any())
                     #'confirm.select_ok'{} = amqp_channel:call(
-                        Channel, #'confirm.select'{}
+                        ChannelPid, #'confirm.select'{}
                     ),
-                    {ok, ConfirmsHandler} = amqp_confirms_handler:register(
-                        Connection, Channel, Fun
+                    {ok, ConfirmsHandlerPid} = amqp_confirms_handler:register(
+                        ConnPid, ChannelPid, Fun
                     ),
-                    {ok, Conn#{confirms_handler => ConfirmsHandler}}
+                    {ok, Conn#{confirms_handler => ConfirmsHandlerPid}}
             end;
         {error, _} = Error ->
             ?LOG_ERROR("Failed to connect error: ~p, settings: ~p", [Error, Params]),
@@ -1348,6 +1371,14 @@ queue(QueueName) ->
     Conn = get(?CONN_KEY),
     queue_(Conn, QueueName, []).
 
+%% @doc Create a queue with the given name and options.
+%% Options can include:
+%%   - durable: boolean() (default: true)
+%%   - auto_delete: boolean() (default: false)
+%%   - exclusive: boolean() (default: false)
+%%   - expires: integer() (in milliseconds)
+%%   - mode: list() (e.g., "lazy", "default")
+-spec queue(binary(), queue_options()) -> {ok, binary()} | {error, term()}.
 queue(QueueName, Opts) ->
     Conn = get(?CONN_KEY),
     queue_(Conn, QueueName, Opts).
@@ -1382,14 +1413,17 @@ prepare_queue_arguments([_ | Opts], Args) ->
 %% @doc Subscribe to a queue with the given name.
 %% This will create a new consumer tag for the given queue.
 %% The consumer tag will be returned in the reply.
+-spec subscribe(binary()) -> ok | {error, term()}.
 subscribe(Q) ->
     Conn = get(?CONN_KEY),
     subscribe_(Conn, Q, 1, self()).
 
+-spec subscribe(binary(), pos_integer()) -> ok | {error, term()}.
 subscribe(Q, Prefetch) ->
     Conn = get(?CONN_KEY),
     subscribe_(Conn, Q, Prefetch, self()).
 
+-spec subscribe(binary(), pos_integer(), pid()) -> ok | {error, term()}.
 subscribe(Q, Prefetch, ConnPid) ->
     #{conn := Conn} = get(?CONN_KEY),
     subscribe_(Conn, Q, Prefetch, ConnPid).
